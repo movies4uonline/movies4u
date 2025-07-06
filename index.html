@@ -230,6 +230,25 @@
     .nav-item.active svg {
       fill: #5DB338;
     }
+    .fab-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background-color: #e11d48; /* red */
+      color: white;
+      font-size: 32px;
+      border: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .fab-button:hover {
+      background-color: #be123c; /* darker red */
+    }
   </style>
 </head>
 <body>
@@ -475,6 +494,9 @@
 </div>
 <!-- 🔺 Footer Play Store Section End -->
 
+<button class="fab-button" onclick="window.location.href='go:player'" title="Open Player">
+    +
+</button>	
 
 <footer style="margin-top: 30px; padding: 20px; text-align: center; background-color: #1a1a1a; color: #ccc; font-size: 14px; border-top: 1px solid #333;">
   <p>© 2025 Movies4U. All rights reserved.</p>
