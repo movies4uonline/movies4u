@@ -539,21 +539,44 @@
 </div>
 <!-- 🔺 Footer Play Store Section End -->
 
+<!-- Floating Plus Button -->
+<button class="fab-button" onclick="openModal()" title="Watch your own video">+</button>
 
-  <!-- Floating Plus Button -->
-  <button class="fab-button" onclick="openModal()">+</button>
+<!-- Modal Structure -->
+<div id="popupModal" class="modal">
+  <div class="modal-content" style="background-color: #1e1e1e; color: white; padding: 20px;">
+    <span class="close" onclick="closeModal()" style="color: #ccc;">&times;</span>
+    
+    <!-- 🔥 Clear Title -->
+    <h2 style="font-size: 20px; font-weight: 700; margin-bottom: 15px; text-align: center;">
+      🎥 Watch Your Own Video Link
+    </h2>
 
-  <!-- Modal Structure -->
-  <div id="popupModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h3>Paste Your Video URL</h3>
-      <input type="text" id="videoUrl" placeholder="https://yourvideo.mp4" style="width: 100%; padding: 8px;" />
-      <button onclick="playVideo()" style="margin-top: 10px; background: #5DB338; color: white; border: none; padding: 10px 16px; border-radius: 6px;">▶ Play</button>
+    <!-- 📥 URL Input -->
+    <input 
+      type="text" 
+      id="videoUrl" 
+      placeholder="Enter direct video link (e.g., https://yourvideo.mp4)" 
+      style="width: 100%; padding: 12px; border: none; border-radius: 6px; margin-bottom: 12px; font-size: 15px;"
+    />
 
-      <video id="videoPlayer" controls playsinline></video>
-    </div>
-  </div>	
+    <!-- ▶ Play Button -->
+    <button 
+      onclick="playVideo()" 
+      style="width: 100%; background-color: #5DB338; color: white; border: none; padding: 12px; font-weight: bold; font-size: 16px; border-radius: 6px; cursor: pointer;">
+      ▶ Play Video
+    </button>
+
+    <!-- 🎬 Video Player -->
+    <video 
+      id="videoPlayer" 
+      controls 
+      playsinline 
+      style="width: 100%; background: #000; margin-top: 20px; display: none; border-radius: 8px;">
+    </video>
+  </div>
+</div>
+  	
 
 <footer style="margin-top: 30px; padding: 20px; text-align: center; background-color: #1a1a1a; color: #ccc; font-size: 14px; border-top: 1px solid #333;">
   <p>© 2025 Movies4U. All rights reserved.</p>
