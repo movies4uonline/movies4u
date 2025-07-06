@@ -233,7 +233,7 @@
     /* Floating "+" Button */
     .fab-button {
       position: fixed;
-      bottom: 40px;
+      bottom: 70px;
       right: 20px;
       width: 56px;
       height: 56px;
@@ -306,7 +306,6 @@
     <button>Search</button>
   </a>
 
-<body>
 
 <!-- 🔝 Top Ad -->
 <div style="text-align: center; margin: 10px 0;">
@@ -357,66 +356,8 @@
       updateSlider();
     }, 4000);
 
-
-    const modal = document.getElementById("popupModal");
-    const video = document.getElementById("videoPlayer");
-
-    function openModal() {
-      modal.style.display = "block";
-    }
-
-    function closeModal() {
-      modal.style.display = "none";
-      video.style.display = "none";
-      video.src = "";
-    }
-
-    function playVideo() {
-      const url = document.getElementById("videoUrl").value.trim();
-      if (url === "") {
-        alert("Please paste a video URL");
-        return;
-      }
-
-      video.src = url;
-      video.style.display = "block";
-
-      video.play().catch(err => {
-        alert("Video playback failed. Check the URL or server.");
-        console.error(err);
-      });
-
-      // Add fullscreen orientation lock listeners
-      video.addEventListener('fullscreenchange', lockOrientation);
-      video.addEventListener('webkitfullscreenchange', lockOrientation);
-      video.addEventListener('mozfullscreenchange', lockOrientation);
-      video.addEventListener('msfullscreenchange', lockOrientation);
-    }
-
-    async function lockOrientation() {
-      const isFullscreen =
-        document.fullscreenElement ||
-        document.webkitFullscreenElement ||
-        document.mozFullScreenElement ||
-        document.msFullscreenElement;
-
-      if (isFullscreen && screen.orientation && screen.orientation.lock) {
-        try {
-          await screen.orientation.lock('landscape');
-          console.log("Orientation locked to landscape");
-        } catch (err) {
-          console.warn("Orientation lock failed:", err);
-        }
-      }
-    }
-
-    // Close modal on outside click
-    window.onclick = function(event) {
-      if (event.target === modal) {
-        closeModal();
-      }
-    };
 </script>
+
 	
 <h2>Sponsored Ad</h2>
 <div style="display: flex; justify-content: center; margin: 20px 0;">
@@ -598,8 +539,6 @@
 </div>
 <!-- 🔺 Footer Play Store Section End -->
 
-<h1 style="padding: 20px;">🎬 Movies4U Home</h1>
-  <p style="padding: 0 20px;">Welcome to your movie portal.</p>
 
   <!-- Floating Plus Button -->
   <button class="fab-button" onclick="openModal()">+</button>
@@ -657,5 +596,66 @@
   </a>
 </div>
 
+<script>
+    const modal = document.getElementById("popupModal");
+    const video = document.getElementById("videoPlayer");
+
+    function openModal() {
+      modal.style.display = "block";
+    }
+
+    function closeModal() {
+      modal.style.display = "none";
+      video.style.display = "none";
+      video.src = "";
+    }
+
+    function playVideo() {
+      const url = document.getElementById("videoUrl").value.trim();
+      if (url === "") {
+        alert("Please paste a video URL");
+        return;
+      }
+
+      video.src = url;
+      video.style.display = "block";
+
+      video.play().catch(err => {
+        alert("Video playback failed. Check the URL or server.");
+        console.error(err);
+      });
+
+      // Add fullscreen orientation lock listeners
+      video.addEventListener('fullscreenchange', lockOrientation);
+      video.addEventListener('webkitfullscreenchange', lockOrientation);
+      video.addEventListener('mozfullscreenchange', lockOrientation);
+      video.addEventListener('msfullscreenchange', lockOrientation);
+    }
+
+    async function lockOrientation() {
+      const isFullscreen =
+        document.fullscreenElement ||
+        document.webkitFullscreenElement ||
+        document.mozFullScreenElement ||
+        document.msFullscreenElement;
+
+      if (isFullscreen && screen.orientation && screen.orientation.lock) {
+        try {
+          await screen.orientation.lock('landscape');
+          console.log("Orientation locked to landscape");
+        } catch (err) {
+          console.warn("Orientation lock failed:", err);
+        }
+      }
+    }
+
+    // Close modal on outside click
+    window.onclick = function(event) {
+      if (event.target === modal) {
+        closeModal();
+      }
+    };
+</script>
+
 </body>
-</html>
+	    </html>
