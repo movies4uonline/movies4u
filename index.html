@@ -94,6 +94,7 @@
       border-radius: 10px;
     }
     .movie-box {
+      position: relative; /* Needed for overlay positioning */
       flex: 0 0 auto;
       width: 150px;
       background: #1c1c1c;
@@ -114,6 +115,16 @@
       outline: 2px solid #5DB338;
       transform: scale(1.05);
     }
+     .overlay-date-bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      padding: 4px 8px;
+      font-size: 12px;
+      border-top-right-radius: 8px;
+	  }
     .channel-box {
       flex: 0 0 auto;
       width: 100px;
@@ -377,18 +388,23 @@
  <h2>Upcoming Movies</h2>
 <div class="scroll-row">
   <div class="movie-box focusable" tabindex="0">
+  <div class="overlay-date-bottom">OTT: July </div>
     <img src="https://i.ibb.co/9HH39xpt/images-90.jpg" />
   </div>
   <div class="movie-box focusable" tabindex="0">
+  <div class="overlay-date-bottom">OTT: July </div>
     <img src="https://i.ibb.co/4RqKtcms/images-91.jpg" />
   </div>
   <div class="movie-box focusable" tabindex="0">
+  <div class="overlay-date-bottom">OTT: July</div>
     <img src="https://i.ibb.co/Y70DTX6Z/et00443661-hqwwncvprr-landscape.jpg" />
   </div>
   <div class="movie-box focusable" tabindex="0">
+  <div class="overlay-date-bottom">OTT: July</div>
     <img src="https://i.ibb.co/N6xhscsh/images-92.jpg" />
   </div>
   <div class="movie-box focusable" tabindex="0">
+  <div class="overlay-date-bottom">OTT: July</div>
     <img src="https://i.ibb.co/QvT7JPSh/images-93.jpg" />
   </div>
 </div>
